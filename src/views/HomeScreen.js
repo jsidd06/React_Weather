@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { Container, Input, Button, Card, } from "reactstrap";
+import { Container, Input, Button, Card,CardImg } from "reactstrap";
+import Image1 from "../Images/weather.jpg"
 function HomeScreen() {
   // weather app state
   const [weather, setWeather] = useState(null);
@@ -21,10 +22,10 @@ function HomeScreen() {
   };
   return (
     <Container style={{ textAlign: "center" }} className="mt-5">
-      <h1>Weather 🌦</h1>
+      <h1>Weather 🌦 Live Service</h1>
       {/* Add the state here [setcity]*/}
       <Input
-        className="mt-3"
+        className="mt-3 p-2 text-center"
         placeholder="Enter Your City Name"
         onChange={(e) => setCity(e.target.value)}
       />
@@ -32,9 +33,14 @@ function HomeScreen() {
       <Button type="submit" className="mt-3 mb-3" onClick={getWeather}>
         Check Now
       </Button>
+      {/* Add the value of data here  {weather}*/}
       {/* set api Data here */}
+      <CardImg src={Image1} alt="Card image cap" />
       {weather && (
-        <Card className="mt-3 p-3" style={{ backgroundColor: "#96CEB4" }}>
+        <Card
+          className="mt-3 p-3"
+          style={{ backgroundColor: "#1572A1", color: "#FFFFFF" }}
+        >
           <h3>City Name :- {weather.name}</h3>
           <h3>Weather :- {weather.weather[0].main}</h3>
           <h3>Description :- {weather.weather[0].description}</h3>
