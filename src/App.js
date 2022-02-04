@@ -6,10 +6,7 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route
-            path="/"
-            element={<HomeScreen />}
-          />
+          <Route path="/React_Weather" element={<HomeScreen />} />
         </Routes>
       </BrowserRouter>
     </>
