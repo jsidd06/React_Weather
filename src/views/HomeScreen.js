@@ -11,7 +11,7 @@ function HomeScreen() {
   const getWeather = () => {
     axios
       .get(
-        `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=c85ce601f31f707c153537eac865348f&units=metric`
+        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=c85ce601f31f707c153537eac865348f&units=metric`
       )
       .then((response) => {
         console.log();
