@@ -56,9 +56,17 @@ function HomeScreen() {
         </Card>
       ) : (
         // video add system
-        <div >
-          <video muted loop autoPlay preload="auto" src={Video}></video>
-        </div>
+        <>
+          <div>
+            <video muted loop autoPlay preload="auto" src={Video}></video>
+          </div>
+          <div>
+            <p>
+              Developed by Siddharth Jain
+              <p>Copyright &copy;2022</p>
+            </p>
+          </div>
+        </>
       )}
     </Container>
   );
