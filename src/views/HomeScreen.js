@@ -35,8 +35,7 @@ function HomeScreen() {
       </Button>
       {/* Add the value of data here  {weather}*/}
       {/* set api Data here */}
-      <CardImg src={Image1} alt="Card image cap" />
-      {weather && (
+      {weather ? (
         <Card
           className="mt-3 p-3"
           style={{ backgroundColor: "#1572A1", color: "#FFFFFF" }}
@@ -54,6 +53,8 @@ function HomeScreen() {
           <h3>Sunrise :- {weather.sys.sunrise}</h3>
           <h3>Sunset :- {weather.sys.sunset}</h3>
         </Card>
+      ) : (
+        <CardImg src={Image1} alt="Card image cap" />
       )}
     </Container>
   );
