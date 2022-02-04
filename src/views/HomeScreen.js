@@ -1,7 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { Container, Input, Button, Card,CardImg } from "reactstrap";
-import Image1 from "../Images/weather.jpg"
+import { Container, Input, Button, Card } from "reactstrap";
 import Video from "../views/Video/rain.mp4";
 import "../style.css"
 function HomeScreen() {
@@ -56,6 +55,7 @@ function HomeScreen() {
           <h3>Sunset :- {weather.sys.sunset}</h3>
         </Card>
       ) : (
+        // video add system
         <div >
           <video muted loop autoPlay preload="auto" src={Video}></video>
         </div>
