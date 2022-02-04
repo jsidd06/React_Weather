@@ -2,6 +2,8 @@ import axios from "axios";
 import React, { useState } from "react";
 import { Container, Input, Button, Card,CardImg } from "reactstrap";
 import Image1 from "../Images/weather.jpg"
+import Video from "../views/Video/rain.mp4";
+import "../style.css"
 function HomeScreen() {
   // weather app state
   const [weather, setWeather] = useState(null);
@@ -54,7 +56,9 @@ function HomeScreen() {
           <h3>Sunset :- {weather.sys.sunset}</h3>
         </Card>
       ) : (
-        <CardImg src={Image1} alt="Card image cap" />
+        <div >
+          <video muted loop autoPlay preload="auto" src={Video}></video>
+        </div>
       )}
     </Container>
   );
