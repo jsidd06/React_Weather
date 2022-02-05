@@ -11,6 +11,7 @@ function HomeScreen() {
    
   // weather app api key
   const getWeather = () => {
+    // api key validation
     if(!city ){
       toast.error("Please enter a city name");
       return;
