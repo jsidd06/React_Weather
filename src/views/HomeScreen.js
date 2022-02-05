@@ -11,6 +11,10 @@ function HomeScreen() {
    
   // weather app api key
   const getWeather = () => {
+    if(!city ){
+      toast.error("Please enter a city name");
+      return;
+    }
     axios
       .get(
         `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=c85ce601f31f707c153537eac865348f&units=metric`
@@ -19,7 +23,7 @@ function HomeScreen() {
         console.log();
         setWeather(response.data);
          toast(
-          "that's Awesome"
+          "That's a nice day! Enjoy the weather!",
          );
       })
       .catch((error) => {
