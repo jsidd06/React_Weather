@@ -37,7 +37,12 @@ function HomeScreen() {
         className="mt-3 p-2 text-center"
         placeholder="Enter Your City Name"
         onChange={(e) => setCity(e.target.value)}
+        autoCorrect
+        aria-required="true"
         required
+        maxLength={30}
+        valid={city.length > 0}
+        invalid={city.length === 0 || city.length > 30} 
       />
       {/* Add the value of data here  {getweather}*/}
       <Button type="submit" className="mt-3 mb-3" onClick={getWeather}>
