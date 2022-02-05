@@ -2,11 +2,13 @@ import axios from "axios";
 import React, { useState } from "react";
 import { Container, Input, Button, Card } from "reactstrap";
 import Video from "../views/Video/rain.mp4";
+import { ToastContainer, toast } from "react-toastify";
 import "../style.css"
 function HomeScreen() {
   // weather app state
   const [weather, setWeather] = useState(null);
   const [city, setCity] = useState("");
+   
   // weather app api key
   const getWeather = () => {
     axios
@@ -16,9 +18,15 @@ function HomeScreen() {
       .then((response) => {
         console.log();
         setWeather(response.data);
+         toast(
+          "that's Awesome"
+         );
       })
       .catch((error) => {
         console.log(error);
+         toast(
+           "Opps We are not able to find the city || Please type valid city name"
+         );
       });
   };
   return (
@@ -29,12 +37,14 @@ function HomeScreen() {
         className="mt-3 p-2 text-center"
         placeholder="Enter Your City Name"
         onChange={(e) => setCity(e.target.value)}
+        required
       />
       {/* Add the value of data here  {getweather}*/}
       <Button type="submit" className="mt-3 mb-3" onClick={getWeather}>
         Check Now
       </Button>
-      {/* Add the value of data here  {weather}*/}
+      {/* Add the value of data here  {getweather}*/}
+      <ToastContainer />
       {/* set api Data here */}
       {weather ? (
         <Card
