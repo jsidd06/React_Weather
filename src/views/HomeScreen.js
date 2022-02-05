@@ -61,6 +61,7 @@ function HomeScreen() {
           className="mt-3 p-3"
           style={{ backgroundColor: "#1572A1", color: "#FFFFFF" }}
         >
+          <p>Please Reload the Page Go back to Home Page</p>
           <h3>City Name :- {weather.name}</h3>
           <h3>Weather :- {weather.weather[0].main}</h3>
           <h3>Description :- {weather.weather[0].description}</h3>
